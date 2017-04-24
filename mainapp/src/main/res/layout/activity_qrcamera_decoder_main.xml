@@ -6,5 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.ee.qrcameradecoder.QRCameraDecoderMain">
-
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#f2f2f5"
+        android:gravity="center"
+        android:text="result should be here"
+        android:textColor="#000"
+        android:textSize="30sp"
+        />
 </RelativeLayout>

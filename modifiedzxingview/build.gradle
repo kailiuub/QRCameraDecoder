@@ -1,0 +1,59 @@
+/* Config repositories and dependencies for Gradle itself to give more instructions on Gradle build*/
+apply plugin: 'com.android.library'
+buildscript {
+    repositories{
+        jcenter()
+        mavenCentral()     // required by android-maven-gradle-plugin
+    }
+    dependencies{
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'   // use android-maven-gradle-plugin v1.5
+    }
+}
+
+
+
+apply plugin: 'com.android.library'      // specify the nature of lib
+apply plugin: 'com.github.dcendents.android-maven'      //  use android-maven-gradle-plugin
+
+def libVersion='1.0'
+group = 'com.example.modifiedzxingview'
+version = libVersion
+
+android {
+
+    lintOptions {
+        abortOnError false  // continue to build when errors found
+    }
+
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName libVersion
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"  // used to run on device
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.google.zxing:core:3.2.1'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.7.5'
+    testCompile 'org.robolectric:robolectric:3.2.2'
+}

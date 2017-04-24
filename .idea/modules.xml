@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/QRCameraDecoder.iml" filepath="$PROJECT_DIR$/QRCameraDecoder.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mainapp/mainapp.iml" filepath="$PROJECT_DIR$/mainapp/mainapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modifiedzxingview/modifiedzxingview.iml" filepath="$PROJECT_DIR$/modifiedzxingview/modifiedzxingview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zxinglib/zxinglib.iml" filepath="$PROJECT_DIR$/zxinglib/zxinglib.iml" />
     </modules>
   </component>
 </project>
